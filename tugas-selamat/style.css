@@ -1,0 +1,150 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0e1538;
+    font-family: Tahoma;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 6px 20% 10%;
+    color: white;
+}
+
+.jarak {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.box span{
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.box span:nth-child(2){
+    color: white;
+    margin-bottom: 1px;
+}
+
+.box span:nth-child(3){
+    color: white;
+    margin-bottom: 3px;
+}
+
+.box {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    /* penting | */
+    overflow: hidden;
+}
+
+img {
+    width: 70%;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+
+.box img {
+    color: rgb(226, 226, 226);
+    text-shadow: 2px 2px black;
+    font-size: 8em;
+    /* penting */
+    z-index: 2;
+}
+
+/* penting */
+.box::before {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 140%;
+    background: linear-gradient(#00ccff, #d500f9);
+    animation: rotate 4s linear infinite;
+}
+
+/* penting */
+.box::after {
+    content: "";
+    position: absolute;
+    background: #0e1538;
+    inset: 5px;
+    border-radius: 16px;
+}
+
+/* penting */
+/* dari ke 0 - 360 */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .jarak{
+        flex-direction: row;
+    }
+
+    .box span{
+        font-size: 8px;
+    }
+
+    .box {
+        margin: 3px;
+        width: 98px;
+        height: 150px;
+    }
+
+    .box::before {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 368px) {
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .jarak{
+        flex-direction: row;
+    }
+
+    .box {
+        width: 100px;
+        height: 150px;
+    }
+
+    .box::before {
+        width: 70px;
+    }
+}
